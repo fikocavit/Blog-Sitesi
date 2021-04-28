@@ -1,0 +1,2 @@
+django version 3.1.5 tir.
+3 th part prog: autoslug,ckeditor
