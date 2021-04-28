@@ -14,7 +14,12 @@
   </head>
   <body>
     {% include "components/navbar.html" %}
-    {% block content %}{% endblock %}
+    <div class='container mt-5'>
+      <div class='row'>
+        {% block content %}{% endblock %}
+        {% include 'components/sidebar.html' %}
+      </div>
+    </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

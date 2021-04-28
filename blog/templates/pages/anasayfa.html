@@ -8,7 +8,25 @@
 
 
 {% block content %}
-  <div class='container'>
-    <h1>Anasayfa</h1>
+
+{% for yazi in yazilar %}
+<div class='col-sm-9'>
+  <div class="card mb-3">
+    <div class="row no-gutters">
+      <div class="col-md-4">
+        <img src="{{ yazi.resmi.url }}" class="card-img" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">{{ yazi.baslik }}</h5>
+          <p class="card-text">{{ yazi.icerik }}</p>
+          <p class="card-text"><small class="text-muted">{{ yazi.duzenleme_tarihi}}</small></p>
+        </div>
+      </div>
+    </div>
   </div>
+  </div>
+{% endfor %}
+
+  
 {% endblock %}
