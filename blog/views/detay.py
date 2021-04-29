@@ -3,7 +3,7 @@ from blog.models import YazilarModel,YorumlarModel
 from blog.forms import YorumEkleForm
 from django.contrib.auth.decorators import login_required
 
-@login_required(login_url='/')
+
 def detay(request, slug):
     yazi=get_object_or_404(YazilarModel, slug=slug)
     yorumlar=yazi.yorumlar.all()

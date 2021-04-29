@@ -19,10 +19,17 @@
           <p class="card-text">{{ yazi.icerik }}</p>
           <p class="card-text"><small class="text-muted">{{ yazi.duzenleme_tarihi}}</small></p>
           <p>
+            
+            {% if request.user == yazi.yazar %}
             <a href="{% url 'yazi-guncelle' slug=yazi.slug %}" class='btn btn-danger'>Guncelle</a>
+            {% endif %}
+              
           </p>
           <p>
+            
+            {% if request.user == yazi.yazar %}
             <a href="{% url 'yazi-sil' slug=yazi.slug %}" class='btn btn-primary'>Yazi Sil</a>
+            {% endif%}
           </p>
         </div>
       </div>

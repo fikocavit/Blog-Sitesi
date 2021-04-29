@@ -6,4 +6,4 @@ class ProfilGuncellemeForm(UserChangeForm):
     password=None
     class Meta:
         model=CustomUserModel
-        fields=['email','last_name','first_name','avatar']
+        fields=['username','email','last_name','first_name','avatar']
