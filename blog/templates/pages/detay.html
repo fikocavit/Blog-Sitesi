@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load crispy_forms_tags %}
 
 
 {% block title %}
@@ -21,14 +21,28 @@
           <p>
             <a href="{% url 'yazi-guncelle' slug=yazi.slug %}" class='btn btn-danger'>Guncelle</a>
           </p>
+          <p>
+            <a href="{% url 'yazi-sil' slug=yazi.slug %}" class='btn btn-primary'>Yazi Sil</a>
+          </p>
         </div>
       </div>
     </div>
   </div>
+Yorumlar
 
+{% if request.user.is_authenticated %}
+<form method="POST">
+  {% csrf_token %}
+{{ yorum_ekle_form|crispy }}
+<input type="submit" class='btn btn-danger mt-1 nb-3' value='Yorum Yap'>
+</form>
+{% else %}
+<p> Yorum yapmak icin lutfen kayit olunuz</p>
+{% endif %}
+  
 {% if yorumlar %}
   {% for yorum in yorumlar %}
-    <div class='card'>
+    <div class='card mt-5'>
       <div class='card-body' style='display-flex;flex-direction: row;'>
         <div>
           
@@ -46,6 +60,8 @@
       </div>
     </div>
   {% endfor %}
+{% else %}
+<p>Henuz bir yorum yok</p>
 {% endif %}
   
 {% endblock %}
