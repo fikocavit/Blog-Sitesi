@@ -5,7 +5,7 @@ from blog.models import KategoriModel
 
 
 class YazilarModel(models.Model):
-    resmi=models.ImageField(upload_to='yazi_resim')
+    resim=models.ImageField(upload_to='yazi_resim')
     baslik=models.CharField(max_length=50,blank=False,null=False)
     icerik=models.TextField()
     yazar=models.ForeignKey('account.CustomUserModel',on_delete=models.CASCADE,related_name='yazilar')
