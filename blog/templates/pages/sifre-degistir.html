@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+    Sifre Degistir
+{% endblock %}
+
+{% block content %}
+  <form action="{% url 'sifre-degistir' %}" method="POST">
+      {% csrf_token %}
+      {{ form|crispy }}
+      <input type="submit" class='btn btn-danger' value="Sifre Degsitir">
+  </form>
+{% endblock %}
+    
