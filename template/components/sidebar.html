@@ -6,7 +6,7 @@
       
       {% if request.user.is_authenticated %}
       <ul class="list-group list-group-flush">
-        <li class="list-group-item">Profil</li>
+        <li class="list-group-item"><a href="{% url 'profil-guncelleme' %}" class=text-muted>Profil Guncelle</a></li>
         <li class="list-group-item"><a href="{% url 'sifre-degistir' %}" class=text-muted>Sifre Degistir</a></li>
         <li class="list-group-item"><a href="{% url 'yazi-ekle' %}" class='text-muted'>Yazi Ekle</a></li>
         <li class="list-group-item"><a href="{% url 'yazilarim' %}" class='text-muted'>Yazilarim</a></li>

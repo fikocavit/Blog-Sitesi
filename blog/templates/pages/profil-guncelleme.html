@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+    Profil Guncelleme
+{% endblock %}
+
+{% block content %}
+  <form enctype="multipart/form-data" method="POST">
+      {% csrf_token %}
+      {{ form.media }}
+      {{ form|crispy }}
+      <input type="submit" class='btn btn-danger' value="Profili Guncelle">
+  </form>
+{% endblock %}
+    
+    
