@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+
+
+{% block title %}
+  Yazilarim
+{% endblock %}
+
+
+{% block content %}
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">baslik</th>
+        <th scope="col">Tarihi</th>
+        <th scope="col">Aksiyonlar</th>
+      </tr>
+    </thead>
+
+    
+{% for yazi in yazilar %}
+<tbody>
+    <tr>
+      <th scope="row">{{yazi.id}}</th>
+      <td><a href="{% url 'detay' slug=yazi.slug %}" class='text-muted'>{{ yazi.baslik }}</a></td>
+      <td>{{yazi.duzenleme_tarihi}}</td>
+      <td>Aksiyonlar Gelecek</td>
+    </tr>
+  </tbody>
+  
+{% empty %}
+<h1>suan bir yaz yok</h1>
+{% endfor %}
+  </table>
+
+    
+
+  
+{% endblock %}

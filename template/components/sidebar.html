@@ -3,12 +3,21 @@
       <div class="card-header">
         MENU
       </div>
+      
+      {% if request.user.is_authenticated %}
       <ul class="list-group list-group-flush">
         <li class="list-group-item">Profil</li>
         <li class="list-group-item">Profil Guncelle</li>
         <li class="list-group-item">Yazi Ekle</li>
-        <li class="list-group-item">Yazilarim</li>
+        <li class="list-group-item"><a href="{% url 'yazilarim' %}" class='text-muted'>Yazilarim</a></li>
         <li class="list-group-item">Cikis</li>
       </ul>
+      {% else %}
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Giris</li>
+        <li class="list-group-item">Kayit Olun</li>
+      </ul>
+      {% endif %}
+        
     </div>
   </div>
