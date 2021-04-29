@@ -40,8 +40,11 @@ INSTALLED_APPS = [
     'blog',#burada blog app i tanitildi.
     'ckeditor',
     'account',
+    'crispy_forms'
     
 ]
+
+CRISPY_TEMPLATE_PACKS='bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
