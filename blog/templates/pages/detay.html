@@ -56,6 +56,11 @@ Yorumlar
         <div>
           <h5 class='card-title'>{{ yorum.yazar.username }}</h5>
           <p class='card-text'>{{yorum.yorum}}</p>
+          {% if request.user == yorum.yazar or request.user == yorum.yazi.yazar %}
+            <p>
+              <a href="{% url 'yorum-sil' id=yorum.id %}" class='btn btn-danger'>Yorum Sil</a>
+            </p>
+          {% endif %}
         </div>
       </div>
     </div>

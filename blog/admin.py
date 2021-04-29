@@ -1,5 +1,5 @@
 from django.contrib import admin
-from blog.models import KategoriModel,YazilarModel,YorumlarModel,IletisimModel,BegenilerModel
+from blog.models import KategoriModel,YazilarModel,YorumlarModel,IletisimModel
 # Register your models here.
 @admin.register(YazilarModel)
 class YazilarAdmin(admin.ModelAdmin):
@@ -15,11 +15,6 @@ class YorumlarAdmin(admin.ModelAdmin):
 class IletisimAdmin(admin.ModelAdmin):
     search_fields=['email','isim_soyisim']
     list_display=['email','isim_soyisim','gonderme_tarihi']
-
-@admin.register(BegenilerModel)
-class BegenilerAdmin(admin.ModelAdmin):
-    search_fields=['yazi','yazar']
-    list_display=['yazi','yazar','olusturma_tarihi']
 
 
 admin.site.register(KategoriModel)
